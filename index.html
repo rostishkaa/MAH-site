@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Арифметичні операції</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="squares" class="d-flex justify-content-center align-items-center" style="height: 100%;">
+    <div id="yellow-row" class="d-flex justify-content-center">
+    </div>
+    <div id="controls-row" class="d-flex justify-content-center mb-2">
+      <button id="generate-problem-button" class="btn btn-primary btn-lg collapse show" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#problem-statement-row, #generate-problem-button, #step-01" 
+        onclick="generateProblem()">Створити Приклад</button>
+    </div>
+    <div id="problem-statement-row" class="justify-content-center mb-2 collapse">
+      <div class="col-auto d-flex align-items-center justify-content-center">
+        <label id="math-problem" for="math-problem" class="col-form-label fs-1"></label>
+        <input type="number" min="-15" max="15" id="math-solution" class="form-control form-control-lg w-auto" disabled>
+      </div>
+    </div>
+
+    <div id="steps" class="justify-content-center mb-2">
+      <div id="step-01" class="col-auto align-items-center justify-content-center mb-2 collapse">
+        <p>Подивись на перший елемент у прикладі. Натисни на клітинку у якії є цей елемент.</p>
+      </div>
+
+      <div id="step-02" class="col-auto align-items-center justify-content-center mb-2 collapse">
+        <p>Подивись на другий елемент у прикладі.</p>
+        <p>Якщо перед ним стоїть знак мінус, тоді відрахуй стільки клітинок ліворуч 👈 від першого числа.</p>
+        <p>Якщо перед ним стоїть знак плюс, тоді відрахуй стільки клітинок праворуч 👉 від першого числа.</p>
+        <button id="check-problem-button" class="btn btn-primary btn-lg collapse" >Перевірити Відповідь</button>
+      </div>
+
+      <div id="step-03" class="col-auto align-items-center justify-content-center collapse">
+        <p>Це правильна відповідь! ⚡️</p>
+        <button id="new-problem-button" class="btn btn-primary btn-lg"
+          data-bs-toggle="collapse"
+          data-bs-target="#step-03, #step-01"
+          onclick="generateProblem()">Ще Раз!</button>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="logic.js"></script>
+</body>
+</html>
